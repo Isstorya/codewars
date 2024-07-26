@@ -3,12 +3,10 @@ function twoSum(numbers, target) {
 
   numbers.forEach((number, index) => {
     numbers.forEach((targetNumber, targetIndex) => {
-      if (numbers[index] === numbers[targetIndex]) return;
+      if (index === targetIndex) return;
       if (number + targetNumber === target) result = [index, targetIndex];
     });
   });
 
   return result;
 }
-
-console.log(twoSum([2, 2, 3], 4));
