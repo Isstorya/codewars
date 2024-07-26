@@ -4,11 +4,27 @@ var numeralCodes = [
   ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"], // Hundreds
 ];
 
-function solution(num) {
-  var numeral = "";
-  var digits = num.toString().split("").reverse();
-  for (var i = 0; i < digits.length; i++) {
-    numeral = numeralCodes[i][parseInt(digits[i])] + numeral;
+const findOnes = function (number) {};
+
+function solution(roman) {
+  const result = [];
+  let tmp = roman[0];
+  for (let index = 1; index < roman.length; index++) {
+    numeralCodes.forEach((code) =>
+      code.forEach((number) => {
+        console.log(tmp);
+        if (tmp + roman[index] == number) tmp += roman[index];
+        else {
+          result.push(tmp);
+          tmp = roman[index];
+        }
+      })
+    );
   }
-  return numeral;
+  return;
 }
+solution("XXI"); //21
+solution("I");
+solution("IV");
+solution("MMVIII");
+solution("MDCLXVI");
