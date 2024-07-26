@@ -1,5 +1,6 @@
 function dashatizeit(inputNumber) {
   const isEven = (number) => !(number % 2);
+  const replaceDash = (str) => str.replace(/--+/g, "-");
 
   const slicedNumber = inputNumber.toString().split("");
   const mappedNumbers = slicedNumber.map((number, index) => {
@@ -16,7 +17,7 @@ function dashatizeit(inputNumber) {
     }
   });
 
-  return mappedNumbers.join("");
+  return replaceDash(mappedNumbers.join(""));
 }
 
 console.log(dashatizeit(974302));
