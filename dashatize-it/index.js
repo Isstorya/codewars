@@ -1,16 +1,22 @@
 function dashatizeit(inputNumber) {
+  const isEven = (number) => !(number % 2);
+
   const slicedNumber = inputNumber.toString().split("");
-  const isEven = (number) => {
-    return !(number % 2);
-  };
-  const mappedNumbers = slicedNumber.map((number) => {
+  const mappedNumbers = slicedNumber.map((number, index) => {
     if (isEven(number)) {
       return number;
     } else {
+      if (index === 0) {
+        return number + "-";
+      }
+      if (index === slicedNumber.lenght - 1) {
+        return "-" + number;
+      }
       return "-" + number + "-";
     }
   });
-  return mappedNumbers;
+
+  return mappedNumbers.join("");
 }
 
 console.log(dashatizeit(974302));
