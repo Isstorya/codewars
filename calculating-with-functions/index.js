@@ -1,43 +1,63 @@
-function zero(p = "") {
-  return eval(`0 ${p}`);
+function zero(arg = 0) {
+  if (arg instanceof Function) {
+    return arg.call(this, 0);
+  } else return () => 0;
 }
-function one(p = "") {
-  return eval(`1 ${p}`);
+function one(arg = 1) {
+  if (arg instanceof Function) {
+    return arg.call(this, 1);
+  } else return () => 1;
 }
-function two(p = "") {
-  return eval(`2 ${p}`);
+function two(arg = 2) {
+  if (arg instanceof Function) {
+    return arg.call(this, 2);
+  } else return () => 2;
 }
-function three(p = "") {
-  return eval(`3 ${p}`);
+function three(arg = 3) {
+  if (arg instanceof Function) {
+    return arg.call(this, 3);
+  } else return () => 3;
 }
-function four(p = "") {
-  return eval(`4 ${p}`);
+function four(arg = 4) {
+  if (arg instanceof Function) {
+    return arg.call(this, 4);
+  } else return () => 4;
 }
-function five(p = "") {
-  return eval(`5 ${p}`);
+function five(arg = 5) {
+  if (arg instanceof Function) {
+    return arg.call(this, 5);
+  } else return () => 5;
 }
-function six(p = "") {
-  return eval(`6 ${p}`);
+function six(arg = 6) {
+  if (arg instanceof Function) {
+    return arg.call(this, 6);
+  } else return () => 6;
 }
-function seven(p = "") {
-  return eval(`7 ${p}`);
+function seven(arg = 7) {
+  if (arg instanceof Function) {
+    return arg.call(this, 7);
+  } else return () => 7;
 }
-function eight(p = "") {
-  return eval(`8 ${p}`);
+function eight(arg = 8) {
+  if (arg instanceof Function) {
+    return arg.call(this, 8);
+  } else return () => 8;
 }
-function nine(p = "") {
-  return eval(`9 ${p}`);
+function nine(arg = 9) {
+  if (arg instanceof Function) {
+    return arg.call(this, 9);
+  } else return () => 9;
 }
 
-function plus(p) {
-  return `+ ${p}`;
+function plus(b) {
+  return (a) => a + b();
 }
-function minus(p) {
-  return `- ${p}`;
+function minus(b) {
+  return (a) => a - b();
 }
-function times(p) {
-  return `* ${p}`;
+function dividedBy(b) {
+  return (a) => Math.floor(a / b());
 }
-function dividedBy(p) {
-  return `/ ${p}`;
+function times(b) {
+  return (a) => a * b();
 }
