@@ -1,7 +1,10 @@
 function order(words) {
-  console.log(words);
-  return words;
+  const slicedWords = words.split(" ");
+  const result = new Array(slicedWords.length);
+  for (let index = 0; index < slicedWords.length; index++) {
+    result[index] = slicedWords.find((word) =>
+      word.split("").some((v) => +v === index + 1)
+    );
+  }
+  return result.join(" ");
 }
-order("is2 Thi1s T4est 3a");
-order("4of Fo1r pe6ople g3ood th5e the2");
-order("");
